@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{{ term.name }} - {{config.title}}</title>
+{% endblock title %}
+
+{% block header %}
+<header>
+<div class="site-title"><a href="{{ config.base_url | safe }}/">{{ config.title }}</a></div>
+<p class="site-description">{{ config.description }}</p>
+</header>
+{% endblock header %}
+
+{% block content %}
+<h1 class="title">{{ term.name }}</h1>
+
+{% for page in term.pages %}
+<div class="taxonomy">
+<span class="taxonomy_datetime">{{ page.date | date(format="%Y-%m-%d") }}</span>
+<span class="taxonomy_item">
+<a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+</span>
+</div>
+{% endfor %}
+{% endblock content %}
