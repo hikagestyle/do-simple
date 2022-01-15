@@ -14,22 +14,18 @@
 {% block content %}
 <h1 class="title">{{ section.title }} Page-{{ paginator.current_index }}</h1>
 
-<div class="small">Total: {{ paginator.number_pagers }} Pages</div>
+<div class="meta">Total: {{ paginator.number_pagers }} Pages</div>
 
 <ul>
   {%- for page in paginator.pages %}
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
   {% endfor %}
 </ul>
-{% endblock content %}
 
-{% block paging %}
-<nav class="paging">
 {% if paginator.previous %}
-  <a class="previous pure-button" href="{{ paginator.previous | safe }}">‹ Previous</a>
+  <a class="prev pure-button" href="{{ paginator.previous | safe }}">‹ Previous</a>
 {% endif %}
 {% if paginator.next %}
 <a class="next pure-button" href="{{ paginator.next | safe }}">Next ›</a>
 {% endif %}
-</nav>
-{% endblock paging %}
+{% endblock content %}
