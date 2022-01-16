@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>{{ term.name }} Page-{{ paginator.current_index }} - {{ config.title }}</title>
+<title>{{ term.name }} - {{config.title}}</title>
 {% endblock title %}
 
 {% block header %}
@@ -12,20 +12,14 @@
 {% endblock header %}
 
 {% block content %}
-<h1 class="title">{{ term.name }} Page-{{ paginator.current_index }}</h1>
+<h1 class="title">{{ term.name }}</h1>
 
-<div class="meta">Total: {{ paginator.number_pagers }}ページ</div>
-
-<ul class="list-none p0">
-{% for page in paginator.pages %}
-  <li><span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span> <a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+{% for page in term.pages %}
+<div class="taxonomy">
+<span class="taxonomy_datetime">{{ page.date | date(format="%Y-%m-%d") }}</span>
+<span class="taxonomy_item">
+<a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+</span>
+</div>
 {% endfor %}
-</ul>
-
-{% if paginator.previous %}
-  <a class="previous pure-button" href="{{ paginator.previous | safe }}">‹ Previous</a>
-{% endif %}
-{% if paginator.next %}
-<a class="next pure-button" href="{{ paginator.next | safe }}">Next ›</a>
-{% endif %}
 {% endblock content %}
