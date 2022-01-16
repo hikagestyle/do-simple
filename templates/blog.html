@@ -17,9 +17,9 @@
 <div class="meta">Total: {{ paginator.number_pagers }} Pages</div>
 
 <ul>
-  {%- for page in paginator.pages %}
+{% for page in paginator.pages %}
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
+{% endfor %}
 </ul>
 
 {% if paginator.previous %}
