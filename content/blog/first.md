@@ -3,7 +3,7 @@ title = "たいとる-1-00001"
 date = 2000-01-01T00:00:00+09:00
 
 [taxonomies]
-tags = ["sample","dummy"]
+tags = ["sample","dummy","1つ"]
 +++
 
 テスト投稿。
