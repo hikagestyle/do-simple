@@ -14,11 +14,11 @@
 {% block content %}
 <h1 class="title">{{ section.title }} Page-{{ paginator.current_index }}</h1>
 
-<div class="meta">Total: {{ paginator.number_pagers }} Pages</div>
+<div class="meta">Total: {{ paginator.number_pagers }}ページ</div>
 
-<ul>
+<ul class="list-none p0">
 {% for page in paginator.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+  <li><span class="date">{{ page.date | date(format="%Y-%m-%d") }}</span> <a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
 {% endfor %}
 </ul>
 
