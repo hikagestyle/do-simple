@@ -56,7 +56,7 @@ blogフォルダへ投稿を詰め込んで、タグで仕分けるイメージ�
 - Zola v0.15.2
 - pure.css
 - config.toml
-	- baseURL（最後のスラッシュ無し）
+	- base_url（最後のスラッシュ無し）
 - カテゴリー無し
 - タグ（taxonomies）有効
 - 固定ページ
